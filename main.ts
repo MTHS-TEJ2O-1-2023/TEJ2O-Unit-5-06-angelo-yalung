@@ -1,8 +1,25 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Angelo Yalung
+ * Created by: Angelo Yalung
  * Created on: Oct 2023
  * This program tells the user the distance between the microbit and the corner of the room using a sonar
 */
 
-basic.showString('Hello, World!')
+// variables
+let distance: number = 0
+
+// starting
+basic.showIcon(IconNames.Happy)
+
+// finding the distance
+input.onButtonPressed(Button.A, function() {
+  basic.clearScreen()
+  distance = sonar.ping(
+      DigitalPin.P1,
+      DigitalPin.P2,
+      PingUnit.Centimeters
+  )
+  basic.showNumber(distance)
+  basic.showIcon(IconNames.Happy)
+})
+
