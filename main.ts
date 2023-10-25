@@ -12,7 +12,7 @@ let distanceToObject: number = 0
 basic.showIcon(IconNames.Happy)
 
 // finding the distance
-input.onButtonPressed(Button.A, function() {
+input.onButtonPressed(Button.A, function () {
   basic.clearScreen()
   distanceToObject = sonar.ping(
     DigitalPin.P1,
